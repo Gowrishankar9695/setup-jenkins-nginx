@@ -30,7 +30,7 @@ echo "🔧 Configuring Nginx as reverse proxy for Jenkins..."
 cat <<EOF | sudo tee /etc/nginx/sites-available/jenkins
 server {
     listen 80;
-    server_name jenkins.example.com;
+    server_name jenkinstest.publicvm.com;
 
     location / {
         proxy_pass         http://localhost:8080;
@@ -58,8 +58,8 @@ echo "✅ Setup complete!"
 echo "👉 NEXT STEP:"
 echo "Add the following line to your local machine's /etc/hosts (Linux/macOS) or C:\\Windows\\System32\\drivers\\etc\\hosts (Windows):"
 echo
-echo "$(curl -s http://checkip.amazonaws.com) jenkins.example.com"
+echo "$(curl -s http://checkip.amazonaws.com) jenkinstest.publicvm.com"
 echo
-echo "Then open: http://jenkins.example.com in your browser"
+echo "Then open: http://jenkinstest.publicvm.com in your browser"
 echo "To get your Jenkins initial admin password, run:"
 echo "  sudo cat /var/lib/jenkins/secrets/initialAdminPassword"
